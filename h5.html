@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>邹市明工作室 · 品牌合作（移动版）</title>
+  <meta name="description" content="邹市明工作室 — 奥运冠军 × 顶流主播，专注明星直播带货、品牌定制合作。隶属遥望科技。" />
+
+  <link rel="preconnect" href="https://miaoda.feishu.cn" />
+  <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&display=swap" />
+  <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Inter:wght@300;400;500;600&display=swap" />
+
+  <script src="https://sf3-scmcdn-cn.feishucdn.com/obj/feishu-static/miaoda/coding-unpkg-sdk/echarts@5.6.0/dist/echarts.min.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root{
+      --paper:#f4eddf;
+      --paper-2:#efe6d3;
+      --card:#fbf7ee;
+      --ink:#2a2722;
+      --ink-soft:#5b554c;
+      --muted:#918a7c;
+      --terracotta:#c27b66;
+      --terracotta-d:#a85f4c;
+      --sage:#7f8e6f;
+      --sage-d:#5f6e51;
+      --forest:#2d3a31;
+      --gold:#b08a4f;
+      --line:rgba(42,39,34,.12);
+      --shadow:0 10px 30px rgba(42,39,34,.10);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      background:#e9e2d2;
+      color:var(--ink);
+      font-family:"Noto Serif SC","Inter",system-ui,-apple-system,"PingFang SC",sans-serif;
+      font-size:15px;
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased;
+    }
+    .h5{
+      max-width:540px;
+      margin:0 auto;
+      background:var(--paper);
+      min-height:100vh;
+      position:relative;
+      overflow:hidden;
+      padding-bottom:78px;
+      box-shadow:0 0 60px rgba(0,0,0,.18);
+    }
+    img{max-width:100%;display:block;}
+    a{color:inherit;text-decoration:none;}
+    .serif{font-family:"Playfair Display","Noto Serif SC",serif;}
+    .italic{font-style:italic;font-family:"Playfair Display",serif;color:var(--terracotta-d);}
+
+    /* ---------- 顶部导航 ---------- */
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 16px;
+      background:rgba(244,237,223,.86);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar__logo{display:flex;align-items:center;gap:9px;}
+    .topbar__mark{width:30px;height:30px;color:var(--forest);}
+    .topbar__txt b{display:block;font-size:14px;font-weight:700;letter-spacing:.5px;}
+    .topbar__txt span{display:block;font-size:9px;letter-spacing:1.5px;color:var(--muted);font-family:"Inter",sans-serif;text-transform:uppercase;}
+    .topbar__cta{
+      background:var(--forest);color:#f4eddf;
+      font-size:13px;font-weight:600;padding:8px 16px;border-radius:999px;
+      display:inline-flex;align-items:center;gap:5px;
+    }
+
+    /* ---------- 通用区块 ---------- */
+    .sec{padding:38px 18px;scroll-margin-top:64px;}
+    .sec--dark{background:var(--forest);color:#f1ece1;}
+    .sec--sage{background:var(--sage);color:#f6f3ea;}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:7px;
+      font-size:11px;letter-spacing:2px;color:var(--terracotta-d);
+      font-weight:600;text-transform:uppercase;font-family:"Inter",sans-serif;margin-bottom:10px;
+    }
+    .eyebrow::before{content:"";width:18px;height:1px;background:var(--terracotta);display:inline-block;}
+    .sec__num{font-family:"Playfair Display",serif;font-size:13px;color:var(--gold);font-weight:700;letter-spacing:2px;}
+    .sec__title{font-size:26px;line-height:1.3;margin:6px 0 12px;font-weight:700;}
+    .sec__title--light{color:#f6f1e6;}
+    .sec__desc{font-size:14px;color:var(--ink-soft);margin:0 0 22px;}
+    .sec--dark .sec__desc,.sec--sage .sec__desc{opacity:.82;}
+
+    /* ---------- HERO ---------- */
+    .hero{padding:24px 18px 30px;text-align:center;position:relative;}
+    .hero .eyebrow{justify-content:center;}
+    .hero__title{font-family:"Playfair Display","Noto Serif SC",serif;font-size:34px;line-height:1.18;font-weight:800;margin:8px 0 6px;}
+    .hero__title em{display:block;font-style:normal;}
+    .hero__title .sub{display:block;font-size:15px;font-family:"Noto Serif SC",serif;font-weight:500;color:var(--terracotta-d);margin-top:8px;letter-spacing:1px;}
+    .hero__desc{font-size:13.5px;color:var(--ink-soft);max-width:380px;margin:14px auto 20px;}
+    .hero__arch{
+      width:200px;height:248px;margin:6px auto 22px;
+      border-radius:120px 120px 14px 14px;overflow:hidden;
+      border:1px solid var(--line);box-shadow:var(--shadow);position:relative;background:var(--paper-2);
+    }
+    .hero__arch img{width:100%;height:100%;object-fit:cover;}
+    .hero__arch::after{content:"";position:absolute;inset:8px;border:1px solid rgba(255,255,255,.5);border-radius:112px 112px 8px 8px;pointer-events:none;}
+    .hero__stats{display:flex;justify-content:space-between;gap:8px;margin-top:8px;}
+    .hero__stat{flex:1;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 6px;box-shadow:0 4px 14px rgba(42,39,34,.05);}
+    .hero__stat b{display:block;font-family:"Playfair Display",serif;font-size:21px;color:var(--forest);line-height:1;}
+    .hero__stat b small{font-size:11px;color:var(--terracotta-d);font-family:"Noto Serif SC",sans-serif;font-weight:600;margin-left:2px;}
+    .hero__stat span{display:block;font-size:11px;color:var(--muted);margin-top:5px;}
+    .hero__btns{display:flex;gap:10px;justify-content:center;margin-top:18px;}
+    .btn{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:12px 22px;border-radius:999px;font-size:14px;font-weight:600;
+      border:1px solid transparent;
+    }
+    .btn--primary{background:var(--forest);color:#f4eddf;box-shadow:var(--shadow);}
+    .btn--ghost{background:transparent;border-color:var(--ink);color:var(--ink);}
+    .btn--sm{padding:9px 18px;font-size:13px;}
+
+    /* ---------- 品牌滚动 ---------- */
+    .marquee{padding:0 0 30px;}
+    .marquee__t{text-align:center;font-size:12px;letter-spacing:2px;color:var(--muted);margin-bottom:14px;}
+    .marquee__row{display:flex;gap:10px;overflow-x:auto;padding:0 18px;scrollbar-width:none;}
+    .marquee__row::-webkit-scrollbar{display:none;}
+    .chip{flex:0 0 auto;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:500;white-space:nowrap;box-shadow:0 3px 10px rgba(42,39,34,.05);}
+
+    /* ---------- 优势卡片 ---------- */
+    .feat-hero{
+      background:linear-gradient(135deg,var(--forest),#3c4b40);color:#f4eddf;
+      border-radius:var(--radius);padding:22px;margin-bottom:14px;box-shadow:var(--shadow);
+    }
+    .feat-hero h3{font-size:19px;margin:0 0 8px;}
+    .feat-hero p{font-size:13px;opacity:.85;margin:0 0 14px;}
+    .feat-hero ul{margin:0;padding-left:18px;font-size:13px;opacity:.9;}
+    .feat-hero li{margin:4px 0;}
+    .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .feat{
+      background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;
+      box-shadow:0 4px 14px rgba(42,39,34,.05);
+    }
+    .feat .ic{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;}
+    .ic--t{background:var(--terracotta);} .ic--s{background:var(--sage);} .ic--g{background:var(--forest);}
+    .feat h4{font-size:15px;margin:0 0 4px;}
+    .feat p{font-size:12px;color:var(--muted);margin:0;}
+
+    /* ---------- 核心数据 ---------- */
+    .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .stat{
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+      border-radius:16px;padding:18px 14px;text-align:center;
+    }
+    .stat--accent{background:var(--terracotta);border-color:transparent;}
+    .stat b{display:block;font-family:"Playfair Display",serif;font-size:30px;line-height:1;color:#fff;}
+    .stat span{display:block;font-size:12.5px;margin-top:8px;opacity:.85;}
+    .stat small{display:block;font-size:10.5px;opacity:.6;margin-top:3px;}
+
+    /* ---------- 时间线 ---------- */
+    .timeline{position:relative;padding-left:22px;margin-top:10px;}
+    .timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line);}
+    .tl{position:relative;padding:0 0 20px;}
+    .tl::before{content:"";position:absolute;left:-22px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--terracotta);border:2px solid var(--paper);box-shadow:0 0 0 2px var(--terracotta);}
+    .tl--ms::before{background:var(--forest);box-shadow:0 0 0 2px var(--forest);}
+    .tl__y{font-family:"Playfair Display",serif;font-size:16px;font-weight:700;color:var(--terracotta-d);}
+    .tl h4{font-size:15px;margin:2px 0 3px;}
+    .tl p{font-size:12.5px;color:var(--ink-soft);margin:0;}
+    .tl__badge{display:inline-block;margin-top:6px;font-size:11px;background:var(--forest);color:#f4eddf;padding:3px 10px;border-radius:999px;}
+
+    /* ---------- 荣誉 ---------- */
+    .honor-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .honor{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px 14px;text-align:center;}
+    .honor--hl{background:var(--terracotta);border-color:transparent;}
+    .honor--w{grid-column:1 / -1;}
+    .honor b{display:block;font-family:"Playfair Display",serif;font-size:24px;color:#fff;line-height:1;}
+    .honor h5{font-size:14px;margin:8px 0 4px;color:#fff;}
+    .honor p{font-size:11.5px;opacity:.82;margin:0;}
+
+    /* ---------- 报价 ---------- */
+    .price{
+      background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+      padding:20px;margin-bottom:14px;box-shadow:0 6px 18px rgba(42,39,34,.06);position:relative;
+    }
+    .price--hl{border:2px solid var(--forest);}
+    .price__badge{position:absolute;top:-11px;left:18px;background:var(--terracotta);color:#fff;font-size:11px;font-weight:600;padding:4px 12px;border-radius:999px;}
+    .price__ic{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:12px;}
+    .price h3{font-size:18px;margin:0 0 6px;}
+    .price p{font-size:12.5px;color:var(--muted);margin:0 0 14px;}
+    .price__num{font-family:"Playfair Display",serif;font-size:30px;color:var(--forest);line-height:1;}
+    .price__num small{font-size:13px;color:var(--terracotta-d);font-family:"Noto Serif SC",sans-serif;font-weight:600;margin-left:4px;}
+    .price__row{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px;}
+    .price__row .price__num{font-size:22px;}
+    .price ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink-soft);}
+    .price ul li{margin:5px 0;}
+    .price__note{font-size:12px;color:var(--muted);background:var(--paper-2);border-radius:10px;padding:10px 12px;}
+    .price__foot{font-size:11.5px;color:var(--muted);text-align:center;margin-top:18px;line-height:1.6;}
+
+    /* ---------- 粉丝画像 ---------- */
+    .aud-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:14px;box-shadow:0 6px 18px rgba(42,39,34,.06);}
+    .aud-card__head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+    .aud-card__tag{font-size:13px;font-weight:700;color:var(--forest);}
+    .aud-card__more{font-size:11px;color:var(--terracotta-d);background:var(--paper-2);padding:3px 10px;border-radius:999px;}
+    .aud-chart{width:100%;min-height:240px;}
+    .aud-stats{display:flex;gap:10px;margin-top:8px;}
+    .aud-stat{flex:1;text-align:center;background:var(--paper-2);border-radius:12px;padding:10px;}
+    .aud-stat b{display:block;font-family:"Playfair Display",serif;font-size:22px;color:var(--terracotta-d);}
+    .aud-stat span{font-size:11px;color:var(--muted);}
+    .aud-ins{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--ink-soft);background:var(--paper-2);border-radius:12px;padding:10px 12px;margin-top:8px;}
+    .aud-ins svg{width:16px;height:16px;color:var(--terracotta);flex:0 0 auto;margin-top:2px;}
+
+    /* ---------- 案例 ---------- */
+    .case{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:16px;box-shadow:0 6px 18px rgba(42,39,34,.06);}
+    .case__media{position:relative;background:#000;}
+    .case__media img{width:100%;height:200px;object-fit:cover;}
+    .case__media video{width:100%;height:200px;object-fit:cover;background:#000;display:none;}
+    .case__media.play video{display:block;}
+    .case__media.play img{display:none;}
+    .case__play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.18);}
+    .case__play span{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;color:var(--forest);font-size:20px;box-shadow:var(--shadow);}
+    .case__media.play .case__play{display:none;}
+    .case__badge{position:absolute;top:12px;left:12px;background:var(--gold);color:#fff;font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;}
+    .case__body{padding:16px;}
+    .case__meta{display:flex;gap:8px;align-items:center;margin-bottom:8px;}
+    .case__cat{font-size:11px;background:var(--sage);color:#fff;padding:2px 9px;border-radius:999px;}
+    .case__brand{font-size:13px;font-weight:700;color:var(--forest);}
+    .case__title{font-size:15.5px;margin:0 0 8px;line-height:1.4;}
+    .case__desc{font-size:12.5px;color:var(--muted);margin:0 0 12px;}
+    .case__metrics{display:flex;gap:10px;flex-wrap:wrap;}
+    .cm{flex:1;min-width:64px;text-align:center;background:var(--paper-2);border-radius:12px;padding:9px 4px;}
+    .cm b{display:block;font-family:"Playfair Display",serif;font-size:19px;color:var(--terracotta-d);line-height:1;}
+    .cm span{font-size:10.5px;color:var(--muted);}
+    .cm--t b{color:var(--sage-d);font-family:"Noto Serif SC",sans-serif;font-size:14px;padding-top:3px;}
+
+    /* ---------- 服务 ---------- */
+    .svc{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:14px;box-shadow:0 6px 18px rgba(42,39,34,.06);}
+    .svc__img{height:170px;overflow:hidden;}
+    .svc__img img{width:100%;height:100%;object-fit:cover;}
+    .svc__body{padding:18px;}
+    .svc__num{font-family:"Playfair Display",serif;font-size:13px;color:var(--gold);font-weight:700;}
+    .svc__tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:999px;margin:6px 0 8px;background:var(--paper-2);color:var(--terracotta-d);}
+    .svc__tag.s{background:var(--sage);color:#fff;} .svc__tag.t{background:var(--terracotta);color:#fff;}
+    .svc h3{font-size:18px;margin:0 0 8px;}
+    .svc p{font-size:12.5px;color:var(--ink-soft);margin:0 0 12px;}
+    .svc ul{margin:0;padding-left:18px;font-size:12.5px;color:var(--ink-soft);}
+    .svc li{margin:4px 0;}
+
+    /* ---------- 流程 ---------- */
+    .proc{position:relative;padding-left:8px;}
+    .step{display:flex;gap:14px;align-items:flex-start;padding:10px 0;}
+    .step__c{flex:0 0 auto;width:42px;height:42px;border-radius:50%;background:var(--forest);color:#f4eddf;display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-weight:700;font-size:15px;box-shadow:var(--shadow);}
+    .step__txt h4{font-size:16px;margin:4px 0 3px;}
+    .step__txt p{font-size:12.5px;color:rgba(246,243,234,.82);margin:0;}
+    .step__line{height:18px;width:2px;background:rgba(246,243,234,.3);margin-left:20px;}
+
+    /* ---------- FAQ ---------- */
+    .acc{border-top:1px solid var(--line);}
+    .acc__item{border-bottom:1px solid var(--line);}
+    .acc__h{width:100%;text-align:left;background:none;border:none;padding:16px 4px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14.5px;font-weight:600;color:var(--ink);font-family:inherit;cursor:pointer;}
+    .acc__ic{flex:0 0 auto;width:22px;height:22px;border-radius:50%;border:1px solid var(--terracotta);color:var(--terracotta-d);display:flex;align-items:center;justify-content:center;font-size:16px;transition:transform .3s,background .3s;line-height:1;}
+    .acc__item.on .acc__ic{transform:rotate(45deg);background:var(--terracotta);color:#fff;border-color:var(--terracotta);}
+    .acc__p{overflow:hidden;max-height:0;transition:max-height .35s ease;}
+    .acc__c{font-size:13px;color:var(--ink-soft);padding:0 4px 16px;line-height:1.75;}
+
+    /* ---------- 联系 CTA ---------- */
+    .cta-sec{background:var(--forest);color:#f4eddf;padding:40px 18px;text-align:center;}
+    .cta-sec h2{font-size:24px;margin:8px 0 12px;}
+    .cta-sec p{font-size:13.5px;opacity:.85;max-width:360px;margin:0 auto 22px;}
+    .cta-cards{display:flex;flex-direction:column;gap:10px;max-width:360px;margin:0 auto;}
+    .cta-card{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:13px 16px;text-align:left;}
+    .cta-card__ic{width:38px;height:38px;border-radius:10px;background:var(--terracotta);display:flex;align-items:center;justify-content:center;color:#fff;flex:0 0 auto;}
+    .cta-card__ic.t{background:var(--terracotta);} .cta-card__ic.s{background:var(--sage);}
+    .cta-card small{display:block;font-size:11px;opacity:.7;}
+    .cta-card b{display:block;font-size:14px;font-weight:600;}
+
+    /* ---------- 页脚 ---------- */
+    .foot{background:#221f1a;color:#cdc6b8;padding:30px 18px 22px;text-align:center;}
+    .foot__logo{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:12px;}
+    .foot__logo svg{width:28px;height:28px;color:var(--gold);}
+    .foot__logo b{font-size:15px;color:#f4eddf;}
+    .foot p{font-size:12px;opacity:.75;margin:0 0 14px;line-height:1.6;}
+    .foot__cols{display:flex;justify-content:center;gap:24px;margin-bottom:14px;}
+    .foot__cols a{font-size:12px;opacity:.8;}
+    .foot__bottom{font-size:11px;opacity:.55;border-top:1px solid rgba(255,255,255,.1);padding-top:14px;}
+
+    /* ---------- 底部固定 CTA ---------- */
+    .dock{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:540px;z-index:60;display:flex;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(244,237,223,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);}
+    .dock a{flex:1;text-align:center;padding:13px 0;border-radius:999px;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;}
+    .dock__tel{background:var(--terracotta);color:#fff;}
+    .dock__cta{background:var(--forest);color:#f4eddf;flex:1.4;}
+
+    /* ---------- 滚动动画 ---------- */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
+    .reveal.in{opacity:1;transform:none;}
+  </style>
+</head>
+<body>
+<div class="h5">
+
+  <!-- 顶部导航 -->
+  <header class="topbar">
+    <a href="#top" class="topbar__logo">
+      <svg class="topbar__mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 3 C 10 8, 6 14, 8 20 C 10 26, 16 28, 16 29 C 16 28, 22 26, 24 20 C 26 14, 22 8, 16 3 Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M16 6 C 13 12, 11 18, 16 26" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
+      </svg>
+      <span class="topbar__txt"><b>邹市明工作室</b><span>Zou Shiming · Studio</span></span>
+    </a>
+    <a href="#contact" class="topbar__cta">商务洽谈 →</a>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <span class="eyebrow">遥望科技 · 多米工作室旗下</span>
+      <h1 class="hero__title">
+        <em>从奥运拳台</em>
+        <em>到直播货架</em>
+        <span class="sub">冠军品质，为品牌背书</span>
+      </h1>
+      <p class="hero__desc">奥运冠军 × 顶流主播双重 IP，携手遥望科技全链路电商能力，为品牌提供内容种草、直播带货到明星代言的一体化商业解决方案。</p>
+      <div class="hero__arch"><img src="images/hero-zou.jpg" alt="邹市明形象照" /></div>
+      <div class="hero__stats">
+        <div class="hero__stat"><b>2<small>届</small></b><span>奥运金牌</span></div>
+        <div class="hero__stat"><b>6<small>大</small></b><span>核心品类</span></div>
+        <div class="hero__stat"><b>3000<small>W+</small></b><span>单品牌GMV</span></div>
+      </div>
+      <div class="hero__btns">
+        <a href="#contact" class="btn btn--primary">开启合作</a>
+        <a href="#services" class="btn btn--ghost">了解服务</a>
+      </div>
+    </section>
+
+    <!-- 品牌滚动 -->
+    <section class="marquee">
+      <p class="marquee__t">深受国民品牌信赖</p>
+      <div class="marquee__row">
+        <span class="chip">金凯撒</span><span class="chip">Swisse</span><span class="chip">空刻意面</span>
+        <span class="chip">伊利</span><span class="chip">安踏体育</span><span class="chip">Beats</span>
+        <span class="chip">百事可乐</span><span class="chip">佳得乐</span><span class="chip">路虎中国</span>
+        <span class="chip">碧欧泉男士</span><span class="chip">自然堂男士</span><span class="chip">宇舶手表</span>
+        <span class="chip">舒肤佳</span><span class="chip">宝洁</span><span class="chip">TCL</span>
+        <span class="chip">问界 M7</span><span class="chip">荣耀</span><span class="chip">KEEP</span>
+      </div>
+    </section>
+
+    <!-- 关于 / 优势 -->
+    <section class="sec" id="about">
+      <span class="sec__num">02</span>
+      <span class="eyebrow">关于工作室</span>
+      <h2 class="sec__title">为什么选择<span class="italic">邹市明工作室</span></h2>
+      <p class="sec__desc">以冠军标准做直播，以专业能力做增长，将冠军人设与遥望科技电商基础设施深度结合。</p>
+
+      <div class="feat-hero reveal">
+        <h3>冠军级明星 IP 价值</h3>
+        <p>两届奥运冠军、中国拳击标志性人物，国民度与正能量家庭形象兼具。</p>
+        <ul>
+          <li>奥运冠军身份 + 冠军人设背书</li>
+          <li>家庭好男人公众形象 · 高信任度</li>
+          <li>体育 × 娱乐跨界资源网络</li>
+          <li>遥望科技全链路体系支撑</li>
+        </ul>
+      </div>
+
+      <div class="feat-grid">
+        <div class="feat reveal"><div class="ic ic--t">✦</div><h4>滋补保健</h4><p>冠军级选品 · 高客单高转化</p></div>
+        <div class="feat reveal"><div class="ic ic--g">🥤</div><h4>食品饮料</h4><p>家庭场景种草 · 复购率领先</p></div>
+        <div class="feat reveal"><div class="ic ic--s">🥊</div><h4>运动服饰</h4><p>专业身份 + 专业选品</p></div>
+        <div class="feat reveal"><div class="ic ic--t">📍</div><h4>本地生服</h4><p>线下引流 · 到店转化</p></div>
+        <div class="feat reveal"><div class="ic ic--g">👶</div><h4>母婴亲子</h4><p>奶爸人设 · 家庭决策</p></div>
+        <div class="feat reveal"><div class="ic ic--s">🎮</div><h4>游戏娱乐</h4><p>破圈传播 · 事件营销</p></div>
+      </div>
+    </section>
+
+    <!-- 核心数据 -->
+    <section class="sec sec--dark" id="data">
+      <span class="sec__num">04</span>
+      <span class="eyebrow">核心数据</span>
+      <h2 class="sec__title sec__title--light">用<span class="italic">数字</span>说话</h2>
+      <p class="sec__desc">持续深耕直播电商赛道，每个数字背后都是可复制的方法论。</p>
+      <div class="stat-grid">
+        <div class="stat reveal"><b data-target="420" data-suffix="万+">0</b><span>抖音潜在粉丝规模</span><small>女性占比 69.74%</small></div>
+        <div class="stat stat--accent reveal"><b data-target="3000" data-suffix="W+">0</b><span>单品牌累计 GMV</span><small>金凯撒合作累计</small></div>
+        <div class="stat reveal"><b data-target="420" data-suffix="W+">0</b><span>单场最高 GMV</span><small>金凯撒鱼油单场</small></div>
+        <div class="stat reveal"><b data-target="61" data-suffix="%">0</b><span>短视频引流成交占比</span><small>短直联动 · 品效协同</small></div>
+      </div>
+    </section>
+
+    <!-- 传奇履历 -->
+    <section class="sec" id="timeline">
+      <span class="sec__num">05</span>
+      <span class="eyebrow">传奇履历</span>
+      <h2 class="sec__title">二十三年<span class="italic">拳王之路</span></h2>
+      <p class="sec__desc">从奥运金牌到世界拳王金腰带，亚洲拳击唯一「大满贯」的荣耀征程。</p>
+      <div class="timeline">
+        <div class="tl reveal"><div class="tl__y">2000</div><h4>入选国家队</h4><p>正式进入中国国家拳击队，开启传奇职业生涯。</p></div>
+        <div class="tl reveal"><div class="tl__y">2004</div><h4>雅典奥运会 · 铜牌</h4><p>中国运动员首枚奥运拳击奖牌，历史性突破。</p></div>
+        <div class="tl tl--ms reveal"><div class="tl__y">2008</div><h4>北京奥运会 · 金牌</h4><p>48 公斤级金牌 · 中国拳击首枚奥运金牌。</p><span class="tl__badge">🏅 奥运首金</span></div>
+        <div class="tl reveal"><div class="tl__y">2011</div><h4>世锦赛三连冠</h4><p>连续三届世锦赛冠军，开创中国拳击新纪元。</p></div>
+        <div class="tl tl--ms reveal"><div class="tl__y">2012</div><h4>伦敦奥运会 · 卫冕金牌</h4><p>49 公斤级卫冕 · 两金一铜收官奥运，全满贯。</p><span class="tl__badge">🏆 全满贯</span></div>
+        <div class="tl tl--ms reveal"><div class="tl__y">职业</div><h4>世界拳王金腰带</h4><p>WBO 国际金腰带 → 纽约麦迪逊花园 → 拉斯维加斯登顶世界拳王。</p></div>
+      </div>
+    </section>
+
+    <!-- 荣誉殿堂 -->
+    <section class="sec sec--sage" id="honors">
+      <span class="sec__num">06</span>
+      <span class="eyebrow">荣誉殿堂</span>
+      <h2 class="sec__title sec__title--light">超越体育的<span class="italic">国民榜样</span></h2>
+      <p class="sec__desc">从奥运冠军到时代榜样，荣誉不仅属于拳台，更属于每个奋斗中的中国人。</p>
+      <div class="honor-grid">
+        <div class="honor reveal"><b>2</b><h5>奥运金牌</h5><p>2008 北京 · 2012 伦敦</p></div>
+        <div class="honor honor--hl reveal"><b>3</b><h5>世锦赛冠军</h5><p>2005 / 2007 / 2011 三连冠</p></div>
+        <div class="honor reveal"><b>WBO</b><h5>世界拳王金腰带</h5><p>拉斯维加斯登顶</p></div>
+        <div class="honor reveal"><b>劳伦斯</b><h5>2016 劳伦斯奖</h5><p>最佳非奥运动员</p></div>
+        <div class="honor honor--w reveal"><b>大满贯</b><h5>亚洲拳击唯一全满贯</h5><p>奥运会 / 世锦赛 / 亚运会 / 全运会 / 职业拳王——亚洲拳击史上唯一实现「全满贯」的拳手。</p></div>
+      </div>
+    </section>
+
+    <!-- 报价方案 -->
+    <section class="sec" id="pricing">
+      <span class="sec__num">07</span>
+      <span class="eyebrow">合作模式与报价</span>
+      <h2 class="sec__title">灵活多元的<span class="italic">合作方案</span></h2>
+      <p class="sec__desc">五大合作模式覆盖品牌从种草到转化的全链路需求，方案可根据品牌目标定制。</p>
+
+      <article class="price price--hl reveal">
+        <span class="price__badge">热门推荐</span>
+        <div class="price__ic ic--g">📺</div>
+        <h3>直播专场</h3>
+        <p>邹市明坐镇直播间，全时段深度讲解，集中爆发转化。</p>
+        <div class="price__num">￥20<small>万起</small></div>
+        <ul>
+          <li>抖音平台 · 4 小时起播</li>
+          <li>基础权益 + 佣金分成</li>
+          <li>专场专属流量加持</li>
+          <li>T+1 数据复盘报告</li>
+        </ul>
+      </article>
+
+      <article class="price reveal">
+        <div class="price__ic ic--t">🎬</div>
+        <h3>定制短视频</h3>
+        <p>邹市明真人出镜，专业团队定制脚本深度种草。</p>
+        <div class="price__num">￥22<small>万起/条</small></div>
+        <ul>
+          <li>抖音平台发布 · 可带购物车</li>
+          <li>基础图文配套</li>
+          <li>支持指定账号矩阵分发</li>
+        </ul>
+      </article>
+
+      <article class="price reveal">
+        <div class="price__ic ic--s">🔗</div>
+        <h3>短直联动</h3>
+        <p>短视频引流 + 直播承接，品效协同转化最大化。</p>
+        <div class="price__num">￥40<small>万起</small></div>
+        <ul>
+          <li>定制短视频 × 直播专场</li>
+          <li>引流成交占比最高 61%</li>
+          <li>投流联动 + 全链路追踪</li>
+        </ul>
+      </article>
+
+      <article class="price reveal">
+        <div class="price__ic ic--g">⭐</div>
+        <h3>品牌代言</h3>
+        <p>奥运冠军形象加持，提升品牌调性与消费者信任。</p>
+        <div class="price__row">
+          <div><div class="price__num">3<small>个月 120万起</small></div></div>
+          <div><div class="price__num">6<small>个月 180万起</small></div></div>
+        </div>
+        <ul>
+          <li>形象大使 / 代言人</li>
+          <li>平面与 TVC 拍摄权益</li>
+          <li>线下活动出席可选</li>
+        </ul>
+      </article>
+
+      <article class="price reveal">
+        <div class="price__ic ic--t">✂️</div>
+        <h3>信息流切片</h3>
+        <p>直播高光切片二次剪辑，信息流精准投放放大转化。</p>
+        <div class="price__note">搭配直播/短视频合作定制 · 具体权益与商务洽谈</div>
+      </article>
+
+      <article class="price reveal">
+        <div class="price__ic ic--s">🏬</div>
+        <h3>进店直播 · 线上访谈</h3>
+        <p>走进品牌直播间深度访谈，为店播带来流量与背书双加持。</p>
+        <div class="price__note">定制化合作方案 · 欢迎联系商务获取详情</div>
+      </article>
+
+      <p class="price__foot">以上为刊例参考价，具体报价根据合作深度、选品结构与排期情况一单一议。</p>
+    </section>
+
+    <!-- 粉丝画像 -->
+    <section class="sec sec--sage" id="audience">
+      <span class="sec__num">08</span>
+      <span class="eyebrow">粉丝画像</span>
+      <h2 class="sec__title sec__title--light">高净值<span class="italic">女性消费</span>核心人群</h2>
+      <p class="sec__desc">粉丝以 31-40 岁女性为核心，消费力强、决策力高，是触达家庭消费的关键入口。</p>
+
+      <div class="aud-card reveal">
+        <div class="aud-card__head"><span class="aud-card__tag">性别分布</span><span class="aud-card__more">女性 TGI 179.99</span></div>
+        <div id="chart-gender" class="aud-chart"></div>
+        <div class="aud-stats">
+          <div class="aud-stat"><b>69.74%</b><span>女性粉丝</span></div>
+          <div class="aud-stat"><b>30.26%</b><span>男性粉丝</span></div>
+        </div>
+      </div>
+
+      <div class="aud-card reveal">
+        <div class="aud-card__head"><span class="aud-card__tag">年龄分布</span><span class="aud-card__more">核心 31-40 岁</span></div>
+        <div id="chart-age" class="aud-chart"></div>
+        <div class="aud-ins">
+          <svg viewBox="0 0 20 20"><path d="M10 2 L12 7 L17 8 L13 12 L14 17 L10 14.5 L6 17 L7 12 L3 8 L8 7 Z" fill="currentColor"/></svg>
+          <span><strong>31-40 岁占比 58.33%</strong>，家庭消费决策主力人群，具备高客单价承受能力。</span>
+        </div>
+      </div>
+
+      <div class="aud-card reveal">
+        <div class="aud-card__head"><span class="aud-card__tag">地域 TOP10</span><span class="aud-card__more">省域分布</span></div>
+        <div id="chart-region" class="aud-chart"></div>
+        <div class="aud-ins">
+          <svg viewBox="0 0 20 20"><path d="M10 2 C 10 2,4 7,4 12 C 4 16,6.5 18,10 18 C 13.5 18,16 16,16 12 C 16 7,10 2,10 2 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span><strong>广东省以 19.6% 领跑</strong>，华东 + 华南沿海省份占比超 50%，高消费力地区集中。</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 合作案例 -->
+    <section class="sec" id="cases">
+      <span class="sec__num">09</span>
+      <span class="eyebrow">优秀合作案例</span>
+      <h2 class="sec__title">用<span class="italic">战绩</span>说话</h2>
+      <p class="sec__desc">从滋补保健、食品乳饮到运动服饰与本地生服，沉淀可复制的短直联动打法。</p>
+
+      <article class="case reveal">
+        <div class="case__media" data-video="videos/cases/video-jinkaisa.mp4">
+          <img src="images/cases/case-gmv-jinkaisa.jpg" alt="金凯撒战报" />
+          <video src="videos/cases/video-jinkaisa.mp4" playsinline muted preload="none" poster="images/cases/poster-jinkaisa.jpg"></video>
+          <div class="case__play"><span>▶</span></div>
+          <span class="case__badge">重点案例</span>
+        </div>
+        <div class="case__body">
+          <div class="case__meta"><span class="case__cat">滋补保健</span><span class="case__brand">金凯撒</span></div>
+          <h3 class="case__title">累计 GMV 3000W+ · 拳王背书的长期增长样本</h3>
+          <div class="case__metrics">
+            <div class="cm"><b>3000W+</b><span>累计GMV</span></div>
+            <div class="cm"><b>420W+</b><span>单场最高</span></div>
+            <div class="cm"><b>40%</b><span>短视频引流</span></div>
+            <div class="cm"><b>53%</b><span>成交占比</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case__media" data-video="videos/cases/video-swisse.mp4">
+          <img src="images/cases/case-gmv-swisse.jpg" alt="Swisse战报" />
+          <video src="videos/cases/video-swisse.mp4" playsinline muted preload="none" poster="images/cases/poster-swisse.jpg"></video>
+          <div class="case__play"><span>▶</span></div>
+        </div>
+        <div class="case__body">
+          <div class="case__meta"><span class="case__cat">滋补保健</span><span class="case__brand">Swisse</span></div>
+          <h3 class="case__title">奶蓟草片单场 170W+ · 保健品稳定转化</h3>
+          <div class="case__metrics">
+            <div class="cm"><b>360W+</b><span>累计GMV</span></div>
+            <div class="cm"><b>35%</b><span>短视频引流</span></div>
+            <div class="cm"><b>52%</b><span>成交占比</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case__media" data-video="videos/cases/video-kongke.mp4">
+          <img src="images/cases/case-gmv-kongke.jpg" alt="空刻意面战报" />
+          <video src="videos/cases/video-kongke.mp4" playsinline muted preload="none" poster="images/cases/poster-kongke.jpg"></video>
+          <div class="case__play"><span>▶</span></div>
+        </div>
+        <div class="case__body">
+          <div class="case__meta"><span class="case__cat">食品饮料</span><span class="case__brand">空刻意面</span></div>
+          <h3 class="case__title">短视频成交占比 61% · 食品场景高效种草</h3>
+          <div class="case__metrics">
+            <div class="cm"><b>420W+</b><span>累计GMV</span></div>
+            <div class="cm"><b>188W+</b><span>单场最高</span></div>
+            <div class="cm"><b>34%</b><span>短视频引流</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case__media" data-video="videos/cases/video-yili.mp4">
+          <img src="images/cases/case-gmv-yili.jpg" alt="伊利战报" />
+          <video src="videos/cases/video-yili.mp4" playsinline muted preload="none" poster="images/cases/poster-yili.jpg"></video>
+          <div class="case__play"><span>▶</span></div>
+        </div>
+        <div class="case__body">
+          <div class="case__meta"><span class="case__cat">乳饮</span><span class="case__brand">伊利</span></div>
+          <h3 class="case__title">总 GMV 550W+ · 国民乳饮品牌专场</h3>
+          <div class="case__metrics">
+            <div class="cm"><b>550W+</b><span>累计GMV</span></div>
+            <div class="cm"><b>350W+</b><span>单场最高</span></div>
+            <div class="cm"><b>70%</b><span>成交占比</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case__media" data-video="videos/cases/video-anta.mp4">
+          <img src="images/cases/case-gmv-anta.jpg" alt="安踏战报" />
+          <video src="videos/cases/video-anta.mp4" playsinline muted preload="none" poster="images/cases/poster-anta.jpg"></video>
+          <div class="case__play"><span>▶</span></div>
+        </div>
+        <div class="case__body">
+          <div class="case__meta"><span class="case__cat">运动服饰</span><span class="case__brand">安踏</span></div>
+          <h3 class="case__title">抖音首播专场 · 运动鞋服首战告捷</h3>
+          <div class="case__metrics">
+            <div class="cm"><b>120W+</b><span>累计GMV</span></div>
+            <div class="cm"><b>20%</b><span>短视频引流</span></div>
+            <div class="cm"><b>40%</b><span>成交占比</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case__media" data-video="videos/cases/video-guizhou.mp4">
+          <img src="images/cases/case-gmv-guizhou.jpg" alt="贵州漂流战报" />
+          <video src="videos/cases/video-guizhou.mp4" playsinline muted preload="none" poster="images/cases/poster-guizhou.jpg"></video>
+          <div class="case__play"><span>▶</span></div>
+        </div>
+        <div class="case__body">
+          <div class="case__meta"><span class="case__cat">本地生服</span><span class="case__brand">贵州漂流</span></div>
+          <h3 class="case__title">抖音官方玩水季 · 热点话题第一名</h3>
+          <div class="case__metrics">
+            <div class="cm"><b>120W+</b><span>累计GMV</span></div>
+            <div class="cm"><b>8W+</b><span>素材点赞</span></div>
+            <div class="cm cm--t"><b>TOP1</b><span>热点话题</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case__media" data-video="videos/cases/video-meili.mp4">
+          <img src="images/cases/case-gmv-meili.jpg" alt="梅里雪山访谈" />
+          <video src="videos/cases/video-meili.mp4" playsinline muted preload="none" poster="images/cases/poster-meili.jpg"></video>
+          <div class="case__play"><span>▶</span></div>
+        </div>
+        <div class="case__body">
+          <div class="case__meta"><span class="case__cat">品牌营销</span><span class="case__brand">金凯撒鱼油</span></div>
+          <h3 class="case__title">拳王挑战梅里雪山访谈 · 把冠军精神转成品牌信任</h3>
+          <p class="case__desc">围绕夺冠经历、极限挑战和高纯鱼油选品逻辑展开访谈，将冠军人格转化为消费者可感知的产品信任。</p>
+          <div class="case__metrics">
+            <div class="cm cm--t"><b>访谈</b><span>内容资产</span></div>
+            <div class="cm cm--t"><b>背书</b><span>冠军信任</span></div>
+            <div class="cm cm--t"><b>转化</b><span>选品沟通</span></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 服务矩阵 -->
+    <section class="sec" id="services">
+      <span class="sec__num">10</span>
+      <span class="eyebrow">服务矩阵</span>
+      <h2 class="sec__title">五大核心<span class="italic">服务能力</span></h2>
+      <p class="sec__desc">从品牌策略到落地执行，提供一站式明星电商合作解决方案。</p>
+
+      <article class="svc reveal">
+        <div class="svc__img"><img src="images/service-live-v2.jpg" alt="直播带货" /></div>
+        <div class="svc__body">
+          <span class="svc__num">01</span>
+          <span class="svc__tag">核心业务</span>
+          <h3>明星直播专场带货</h3>
+          <p>邹市明坐镇直播间，以冠军专业态度深度讲解。滋补保健、食品饮料、运动服饰已验证高转化模式。</p>
+          <ul><li>专场 / 混场灵活合作</li><li>品效合一脚本策划</li><li>精准人群投放加持</li><li>完整售后与数据复盘</li></ul>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc__img"><img src="images/service-shortvideo-v2.jpg" alt="短视频种草" /></div>
+        <div class="svc__body">
+          <span class="svc__num">02</span>
+          <span class="svc__tag s">内容矩阵</span>
+          <h3>短视频内容种草</h3>
+          <p>围绕产品卖点定制短视频，邹市明真人出镜，多平台分发构建持续内容资产。</p>
+          <ul><li>专业编导脚本策划</li><li>多平台矩阵分发</li><li>信息流投放协同</li><li>数据驱动内容迭代</li></ul>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc__img"><img src="images/service-endorse-v2.jpg" alt="品牌代言" /></div>
+        <div class="svc__body">
+          <span class="svc__num">03</span>
+          <span class="svc__tag t">品牌升级</span>
+          <h3>品牌代言合作</h3>
+          <p>依托奥运冠军国民形象与正向口碑，提供形象代言、产品大使等深度合作。</p>
+          <ul><li>品牌形象大使 / 代言人</li><li>平面与 TVC 拍摄</li><li>线下活动出席</li><li>授权物料使用</li></ul>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc__img"><img src="images/service-custom-v2.jpg" alt="品牌定制" /></div>
+        <div class="svc__body">
+          <span class="svc__num">04</span>
+          <span class="svc__tag">深度共创</span>
+          <h3>品牌定制内容</h3>
+          <p>结合品牌节点与营销主题，定制专属内容 IP 与活动创意，打造有传播力的品牌事件。</p>
+          <ul><li>新品首发专场定制</li><li>节日营销主题策划</li><li>跨界联名内容共创</li><li>公益项目联动</li></ul>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc__img"><img src="images/service-fullcase-v2.jpg" alt="年度全案" /></div>
+        <div class="svc__body">
+          <span class="svc__num">05</span>
+          <span class="svc__tag s">年度合作</span>
+          <h3>年度全案营销</h3>
+          <p>整合明星资源、直播矩阵、内容种草与品牌代言，以更高效成本实现持续增长。</p>
+          <ul><li>定制年度营销规划</li><li>多业务打包优惠</li><li>专属团队对接</li><li>季度战略复盘</li></ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- 合作流程 -->
+    <section class="sec sec--sage" id="process">
+      <span class="sec__num">11</span>
+      <span class="eyebrow">合作流程</span>
+      <h2 class="sec__title sec__title--light">标准化<span class="italic">五步合作</span>流程</h2>
+      <p class="sec__desc">从初次接洽到复盘优化，每步专人跟进，确保合作高效落地。</p>
+      <div class="proc">
+        <div class="step reveal"><div class="step__c">01</div><div class="step__txt"><h4>需求沟通</h4><p>品牌方提报合作意向与产品信息，商务对接初步匹配。</p></div></div>
+        <div class="step__line"></div>
+        <div class="step reveal"><div class="step__c">02</div><div class="step__txt"><h4>方案定制</h4><p>基于品牌目标与产品特性，定制专属合作方案与报价。</p></div></div>
+        <div class="step__line"></div>
+        <div class="step reveal"><div class="step__c">03</div><div class="step__txt"><h4>合同签署</h4><p>确认合作细节，签署正式合同，启动项目排期。</p></div></div>
+        <div class="step__line"></div>
+        <div class="step reveal"><div class="step__c">04</div><div class="step__txt"><h4>执行落地</h4><p>选品、脚本、直播/拍摄全流程执行，专人跟进。</p></div></div>
+        <div class="step__line"></div>
+        <div class="step reveal"><div class="step__c">05</div><div class="step__txt"><h4>复盘优化</h4><p>T+1 数据复盘，输出效果报告与后续优化建议。</p></div></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="sec" id="faq">
+      <span class="sec__num">12</span>
+      <span class="eyebrow">常见问题</span>
+      <h2 class="sec__title">合作前想<span class="italic">了解</span></h2>
+      <div class="acc">
+        <div class="acc__item"><button class="acc__h">直播专场和短视频的报价是多少？<span class="acc__ic">+</span></button><div class="acc__p"><div class="acc__c">直播专场 4 小时起，基础权益 20 万起 + 佣金分成；定制短视频 22 万/条起，可带购物车、支持矩阵分发。短直联动套餐 40 万起，性价比更高。品牌代言 3 个月 120 万起、6 个月 180 万起。以上为刊例参考价，具体一单一议。</div></div></div>
+        <div class="acc__item"><button class="acc__h">哪些品类合作效果最好？<span class="acc__ic">+</span></button><div class="acc__p"><div class="acc__c">滋补保健、食品饮料、运动服饰是核心优势品类，金凯撒、空刻意面、Swisse 均有亮眼战绩。本地生服、母婴、游戏娱乐也有成熟案例。粉丝以 31-40 岁女性为主（占 69.74%），家庭消费决策力强。</div></div></div>
+        <div class="acc__item"><button class="acc__h">品牌代言包含哪些权益？<span class="acc__ic">+</span></button><div class="acc__p"><div class="acc__c">代言提供 3 个月（120万起）和 6 个月（180万起）两种基础周期，含平面 / TVC 拍摄、线上线下物料授权、品牌大使身份使用等，可选配直播专场、短视频种草、线下活动出席。</div></div></div>
+        <div class="acc__item"><button class="acc__h">从接洽到上线一般需要多久？<span class="acc__ic">+</span></button><div class="acc__p"><div class="acc__c">需求沟通（1天）→ 方案报价（1-2天）→ 合同签署（2-3天）→ 选品/脚本/排期（3-7天）→ 执行上线。直播专场一般 7-14 天落地，短视频 5-7 天交付，品牌代言需 2-4 周筹备。</div></div></div>
+        <div class="acc__item"><button class="acc__h">合作效果怎么保证？有 ROI 承诺吗？<span class="acc__ic">+</span></button><div class="acc__p"><div class="acc__c">基于同品类历史数据提供预期参考（金凯撒累计 3000W+、单场 420W+），通过选品优化、脚本打磨、流量加持全力保障转化。建议先小单测试再放量，年度框架客户可约定阶段性目标与复盘机制。</div></div></div>
+        <div class="acc__item"><button class="acc__h">分成和结算方式是怎样的？<span class="acc__ic">+</span></button><div class="acc__p"><div class="acc__c">直播合作通常为「坑位费 + 佣金」，佣金按品类和客单价约定，按平台结算周期、扣除退货后结算。短视频、代言为固定费用，按合同节点分期付款。</div></div></div>
+        <div class="acc__item"><button class="acc__h">可以只做代言 / 短视频，不做直播吗？<span class="acc__ic">+</span></button><div class="acc__p"><div class="acc__c">完全可以，支持单项或自由组合。但数据表明短直联动转化最佳（短视频引流占比最高 61%），通常建议组合以实现 ROI 最大化。进店直播、线上访谈也可单独洽谈。</div></div></div>
+      </div>
+    </section>
+
+    <!-- 联系 CTA -->
+    <section class="cta-sec" id="contact">
+      <span class="eyebrow">商务合作</span>
+      <h2>准备好开启<span class="italic">冠军级合作</span>了吗？</h2>
+      <p>填写合作意向或直接联系商务团队，我们将在 24 小时内与您取得联系。</p>
+      <div class="cta-cards">
+        <div class="cta-card"><div class="cta-card__ic">✉️</div><div><small>商务邮箱</small><b>biz@zoushiming.studio</b></div></div>
+        <div class="cta-card"><div class="cta-card__ic t">📞</div><div><small>合作热线</small><b>183-2662-0184</b></div></div>
+        <div class="cta-card"><div class="cta-card__ic s">📍</div><div><small>办公地址</small><b>杭州市 · 遥望总部大楼</b></div></div>
+      </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="foot">
+      <div class="foot__logo">
+        <svg viewBox="0 0 32 32"><path d="M16 3 C 10 8, 6 14, 8 20 C 10 26, 16 28, 16 29 C 16 28, 22 26, 24 20 C 26 14, 22 8, 16 3 Z" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+        <b>邹市明工作室</b>
+      </div>
+      <p>冠军品质，为品牌而生。<br/>隶属遥望科技 · 多米工作室</p>
+      <div class="foot__cols">
+        <a href="#services">服务业务</a><a href="#process">合作流程</a><a href="#faq">常见问题</a><a href="#contact">商务咨询</a>
+      </div>
+      <div class="foot__bottom">© 2025 邹市明工作室 · 版权所有　|　隶属遥望科技 · 多米工作室</div>
+    </footer>
+
+  </main>
+
+  <!-- 底部固定 CTA -->
+  <div class="dock">
+    <a href="tel:18326620184" class="dock__tel">📞 电话咨询</a>
+    <a href="#contact" class="dock__cta">立即开启冠军级合作 →</a>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  // ---- 滚动显现 + 数字计数 ----
+  var revealEls = document.querySelectorAll('.reveal');
+  var statNums = document.querySelectorAll('.stat b[data-target]');
+  var statsDone = false;
+
+  function animateNum(el, target, suffix){
+    var dur = 1800, start = performance.now();
+    function step(now){
+      var p = Math.min((now-start)/dur, 1);
+      var e = p===1 ? 1 : 1 - Math.pow(2, -10*p);
+      var val = Math.floor(target * e);
+      el.textContent = val.toLocaleString('zh-CN') + suffix;
+      if(p<1) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString('zh-CN') + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        en.target.classList.add('in');
+        if(en.target.classList.contains('stat') && !statsDone){
+          statsDone = true;
+          statNums.forEach(function(n){
+            animateNum(n, parseInt(n.getAttribute('data-target'),10), n.getAttribute('data-suffix')||'');
+          });
+        }
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.18 });
+
+  revealEls.forEach(function(el){ io.observe(el); });
+
+  // ---- FAQ 手风琴 ----
+  document.querySelectorAll('.acc__item').forEach(function(item){
+    var h = item.querySelector('.acc__h');
+    var p = item.querySelector('.acc__p');
+    h.addEventListener('click', function(){
+      var isOn = item.classList.contains('on');
+      document.querySelectorAll('.acc__item').forEach(function(o){
+        o.classList.remove('on');
+        o.querySelector('.acc__p').style.maxHeight = null;
+      });
+      if(!isOn){
+        item.classList.add('on');
+        p.style.maxHeight = p.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // ---- 案例视频播放切换 ----
+  document.querySelectorAll('.case__media').forEach(function(media){
+    var play = media.querySelector('.case__play');
+    var video = media.querySelector('video');
+    play.addEventListener('click', function(){
+      media.classList.add('play');
+      video.play();
+    });
+  });
+
+  // ---- 平滑滚动（含固定底栏偏移）----
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id === '#' || id === '#top') return;
+      var t = document.querySelector(id);
+      if(!t) return;
+      e.preventDefault();
+      var y = t.getBoundingClientRect().top + window.scrollY - 56;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+  });
+
+  // ---- ECharts 粉丝画像 ----
+  function initCharts(){
+    if(typeof echarts === 'undefined') return;
+    var C = { forest:'#2D3A31', sage:'#7F8E6F', sageL:'#B8C2B1', terracotta:'#C27B66', terL:'#D9A38D', muted:'#8A8275', inkSoft:'#5B554C', ivory:'#FBF7EE' };
+
+    var g = document.getElementById('chart-gender');
+    if(g){
+      var cg = echarts.init(g);
+      cg.setOption({
+        color:[C.terracotta, C.sageL],
+        tooltip:{trigger:'item', confine:true, formatter:'{b}<br/>{c}%'},
+        legend:{bottom:2, icon:'circle', itemWidth:8, itemHeight:8, itemGap:14, textStyle:{color:C.inkSoft, fontSize:12}},
+        graphic:[
+          {type:'text', left:'center', top:'38%', style:{text:'69.7%', fontSize:26, fontWeight:600, fill:C.forest, fontFamily:'Playfair Display, serif'}},
+          {type:'text', left:'center', top:'53%', style:{text:'女性粉丝', fontSize:11, fill:C.muted, letterSpacing:'2px'}}
+        ],
+        series:[{type:'pie', radius:['60%','80%'], center:['50%','44%'], itemStyle:{borderColor:C.ivory, borderWidth:3}, label:{show:false}, labelLine:{show:false},
+          data:[{value:69.74, name:'女性'},{value:30.26, name:'男性'}]}]
+      });
+      new ResizeObserver(function(){cg.resize();}).observe(g);
+    }
+
+    var a = document.getElementById('chart-age');
+    if(a){
+      var ca = echarts.init(a);
+      ca.setOption({
+        grid:{left:'2%', right:'10%', top:'4%', bottom:'4%', containLabel:true},
+        tooltip:{trigger:'axis', confine:true, axisPointer:{type:'shadow'}},
+        xAxis:{type:'value', max:60, axisLabel:{formatter:'{value}%', color:C.muted, fontSize:11}, splitLine:{lineStyle:{color:'rgba(255,255,255,.15)'}}, axisLine:{show:false}, axisTick:{show:false}},
+        yAxis:{type:'category', data:['18-23岁','24-30岁','31-40岁','41-50岁'], axisLabel:{color:'#f1ece1', fontSize:12}, axisLine:{show:false}, axisTick:{show:false}, inverse:true},
+        series:[{type:'bar', data:[{value:8.33,itemStyle:{color:C.sageL}},{value:16.67,itemStyle:{color:C.sage}},{value:58.33,itemStyle:{color:C.terracotta}},{value:16.67,itemStyle:{color:C.sageL}}],
+          barWidth:'52%', itemStyle:{borderRadius:[0,6,6,0]}, label:{show:true, position:'right', formatter:'{c}%', color:'#fff', fontSize:12, fontWeight:600}}]
+      });
+      new ResizeObserver(function(){ca.resize();}).observe(a);
+    }
+
+    var r = document.getElementById('chart-region');
+    if(r){
+      var cr = echarts.init(r);
+      var regs = ['福建','湖北','浙江','广西','安徽','江苏','河北','山东','河南','广东'];
+      var vals = [3.7,3.7,4.2,5.0,5.2,5.7,6.1,6.7,10.1,19.6];
+      var cols = vals.map(function(v,i){ if(i>=7) return C.terracotta; if(i>=4) return C.terL; return C.sage; });
+      cr.setOption({
+        grid:{left:'2%', right:'12%', top:'4%', bottom:'4%', containLabel:true},
+        tooltip:{trigger:'axis', confine:true, axisPointer:{type:'shadow'}},
+        xAxis:{type:'value', max:22, axisLabel:{formatter:'{value}%', color:C.muted, fontSize:11}, splitLine:{lineStyle:{color:'rgba(255,255,255,.15)'}}, axisLine:{show:false}, axisTick:{show:false}},
+        yAxis:{type:'category', data:regs, axisLabel:{color:'#f1ece1', fontSize:12}, axisLine:{show:false}, axisTick:{show:false}, inverse:true},
+        series:[{type:'bar', data:vals.map(function(v,i){return {value:v, itemStyle:{color:cols[i]}};}), barWidth:'55%', itemStyle:{borderRadius:[0,6,6,0]},
+          label:{show:true, position:'right', formatter:'{c}%', color:'#fff', fontSize:12, fontWeight:600}}]
+      });
+      new ResizeObserver(function(){cr.resize();}).observe(r);
+    }
+  }
+
+  // 粉丝画像进入视口再初始化
+  var aud = document.getElementById('audience');
+  var chartDone = false;
+  var cio = new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(en.isIntersecting && !chartDone){
+        chartDone = true;
+        requestAnimationFrame(initCharts);
+        cio.disconnect();
+      }
+    });
+  }, { threshold: 0.2 });
+  if(aud) cio.observe(aud);
+
+})();
+</script>
+</body>
+</html>
