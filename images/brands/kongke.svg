@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
-  <rect width="120" height="60" rx="6" fill="#FFF5EE"/>
-  <ellipse cx="35" cy="32" rx="12" ry="7" fill="none" stroke="#E85D04" stroke-width="2" transform="rotate(-20 35 32)"/>
-  <line x1="25" y1="28" x2="45" y2="28" stroke="#E85D04" stroke-width="1.5" transform="rotate(-20 35 32)"/>
-  <text x="72" y="26" text-anchor="middle" font-family="'Noto Serif SC',serif" font-size="13" font-weight="700" fill="#333">空刻</text>
-  <text x="72" y="42" text-anchor="middle" font-family="'Noto Serif SC',serif" font-size="10" fill="#E85D04">意面</text>
-</svg>

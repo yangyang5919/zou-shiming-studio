@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
-  <rect width="120" height="60" rx="6" fill="#F0F5FF"/>
-  <circle cx="30" cy="30" r="16" fill="#004B93"/>
-  <path d="M18 30 A12 12 0 0 1 42 30 A12 12 0 0 1 18 30" fill="#E31837" transform="translate(0,-5)"/>
-  <path d="M18 30 A12 12 0 0 0 42 30 A12 12 0 0 0 18 30" fill="#FFD100" transform="translate(0,5)"/>
-  <text x="64" y="28" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="11" font-weight="700" fill="#333">百事可乐</text>
-  <text x="64" y="44" text-anchor="middle" font-family="Arial" font-size="10" font-weight="700" fill="#004B93" letter-spacing="1.5">pepsi</text>
-</svg>

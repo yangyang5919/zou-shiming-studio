@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
-  <rect width="120" height="60" rx="6" fill="#FFF8F0"/>
-  <path d="M18 18 Q30 42 42 18" fill="none" stroke="#FF6900" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="21" cy="24" r="3" fill="#FFD100"/>
-  <circle cx="39" cy="24" r="3" fill="#FFD100"/>
-  <text x="64" y="28" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="12" font-weight="700" fill="#333">佳得乐</text>
-  <text x="64" y="44" text-anchor="middle" font-family="Arial" font-size="9" font-weight="700" fill="#FF6900" letter-spacing="1">GATORADE</text>
-</svg>
