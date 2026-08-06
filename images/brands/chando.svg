@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
+  <rect width="120" height="60" rx="6" fill="#FFF0F3"/>
+  <circle cx="28" cy="30" r="14" fill="none" stroke="#C41E3A" stroke-width="1.5"/>
+  <path d="M22 30 L28 22 L34 30 L28 38 Z" fill="#C41E3A" opacity="0.8"/>
+  <text x="66" y="26" text-anchor="middle" font-family="'Noto Serif SC',serif" font-size="12" font-weight="700" fill="#333">自然堂</text>
+  <text x="66" y="42" text-anchor="middle" font-family="'Noto Sans SC',sans-serif" font-size="10" fill="#C41E3A">男士</text>
+</svg>

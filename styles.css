@@ -856,23 +856,38 @@ ul { list-style: none; }
 
 .brand-item {
   background: var(--ivory);
-  padding: 28px 20px;
+  padding: 20px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 6px;
   transition: all 0.5s var(--ease-organic);
-  min-height: 100px;
+  min-height: 110px;
 }
 
 .brand-item:hover {
   background: var(--warm-beige);
 }
 
+.brand-item__logo {
+  width: 80px;
+  height: auto;
+  max-height: 44px;
+  object-fit: contain;
+  margin-bottom: 4px;
+  opacity: 0.92;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.brand-item:hover .brand-item__logo {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
 .brand-item__name {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--forest-green);
   letter-spacing: 0.01em;
@@ -2935,6 +2950,11 @@ ul { list-style: none; }
     grid-template-columns: repeat(4, 1fr);
   }
 
+  .brand-item__logo {
+    width: 68px;
+    max-height: 38px;
+  }
+
   /* 冠军画廊 */
   .gallery__grid {
     grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -3155,8 +3175,14 @@ ul { list-style: none; }
   }
 
   .brand-item {
-    padding: 20px 12px;
-    min-height: 80px;
+    padding: 14px 10px;
+    min-height: 100px;
+  }
+
+  .brand-item__logo {
+    width: 60px;
+    max-height: 34px;
+    margin-bottom: 2px;
   }
 
   .brand-item__name {

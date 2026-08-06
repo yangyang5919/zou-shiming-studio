@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
+  <rect width="120" height="60" rx="6" fill="#FFF9F0"/>
+  <text x="60" y="28" text-anchor="middle" font-family="'Noto Serif SC','STSong'" font-size="16" font-weight="700" fill="#C8102E">金凯撒</text>
+  <text x="60" y="46" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#999" letter-spacing="2">SWISSE</text>
+</svg>
