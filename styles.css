@@ -288,8 +288,8 @@ ul { list-style: none; }
 
 .arch--faq {
   width: 100%;
-  max-width: 320px;
-  aspect-ratio: 3 / 4;
+  max-width: 360px;
+  aspect-ratio: 4 / 5;
   margin-top: 32px;
   box-shadow: var(--shadow-md);
 }
@@ -2553,14 +2553,15 @@ ul { list-style: none; }
 /* ---------- FAQ 手风琴 ---------- */
 .faq__inner {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: clamp(40px, 6vw, 80px);
-  align-items: start;
+  align-items: center;
 }
 
 .faq__side {
-  position: sticky;
-  top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .faq__side .section__num {
@@ -2669,7 +2670,7 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: clamp(40px, 6vw, 80px);
-  align-items: center;
+  align-items: start;
 }
 
 .cta-section__content .eyebrow {
@@ -2751,7 +2752,9 @@ ul { list-style: none; }
 .cta-section__visual {
   position: relative;
   display: flex;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: 8px;
 }
 
 .cta-section__vine {
